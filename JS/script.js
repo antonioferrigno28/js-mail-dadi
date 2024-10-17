@@ -27,16 +27,43 @@ const mailsList = [
 
 //RACCOLTA DATI
 //L'untente deve inserire la sua email
+const userEmail = prompt("Inserisci la tua email");
 
 //ELABORAZIONE
 //Verifichiamo se l'email è valida controllando la presenza dei caratteri "." e "@"
+const isEmailValid = userEmail.includes("@") && userEmail.includes(".");
+//Dichiaro una variabile che indica la presenza dell'utente nell'elenco con un valore di false (non presenza)
+let isEmailPresent = false;
 
 //SE l'email è valida procediamo con la comparison
-//ALTRIMENTI display messaggio di errore
-
-//PER i che parte da 0 fino ad arrivare all'INDICE MASSIMO (ovvero lunghezza array -1) incrementa i
-//Controlla per ogni cassetto se il contenuto è uguale
-//SE il contenuto è uguale
-//Display messaggio login avvenuto con successo
+if (isEmailValid) {
+  //PER "i" che parte da 0 fino ad arrivare all'INDICE MASSIMO (ovvero lunghezza array -1) incrementa i
+  for (i = 0; i < mailsList.length; i++) {
+    //SE il contenuto è uguale (controlla per ogni cassetto)
+    if (userEmail === mailsList[i]) {
+      //L'indicatore che l'email è presente diventa vero
+      isEmailPresent = true;
+    }
+  }
+}
 //ALTRIMENTI
-//Display messaggio di errore (NON presenza in whitelist)
+else {
+  // display messaggio di errore di battitura
+  alert(
+    "Errore nell'inserimento dell'email, assicurati di aver inserito una mail vailda "
+  );
+}
+
+//SE l'email è presente nell'elenco
+if (isEmailPresent) {
+  //Display messaggio di riuscita
+  alert("Sei presente nella whitelist, benvenuto.");
+  //ALTRIMENTI
+} else {
+  //Display messaggio di non presenza nella lista
+  alert("Non sei presente in whitelist, accesso negato");
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//ESERCIZIO 2: DADI
