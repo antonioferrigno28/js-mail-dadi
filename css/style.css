@@ -2,8 +2,12 @@
   background-color: #ebebf2;
 }
 
-img {
-  width: 55%;
+img.img-mail {
+  width: 60%;
+}
+
+img.img-dadi {
+  width: 100%;
 }
 
 a {
