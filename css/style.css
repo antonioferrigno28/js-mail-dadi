@@ -5,3 +5,7 @@
 img {
   width: 55%;
 }
+
+a {
+  color: inherit;
+}

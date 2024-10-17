@@ -41,23 +41,21 @@ if (isEmailValid) {
       isEmailPresent = true;
     }
   }
-}
-//ALTRIMENTI
-else {
-  // display messaggio di errore di battitura
-  alert(
-    "Errore nell'inserimento dell'email, assicurati di aver inserito una mail vailda "
-  );
-}
-
-//SE l'email è presente nell'elenco
-if (isEmailPresent) {
-  //Display messaggio di riuscita
-  alert("Sei presente nella whitelist, benvenuto.");
+  //SE l'email è presente nell'array
+  if (isEmailPresent) {
+    // Display messaggio di riuscita
+    alert("Sei presente nella whitelist, benvenuto.");
+    //ALTRIMENTI
+  } else {
+    // Display messaggio di non presenza nella lista
+    alert("Non sei presente in whitelist, accesso negato");
+  }
   //ALTRIMENTI
 } else {
-  //Display messaggio di non presenza nella lista
-  alert("Non sei presente in whitelist, accesso negato");
+  // Display messaggio di errore di battitura
+  alert(
+    "Errore nell'inserimento dell'email, assicurati di aver inserito una mail valida"
+  );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
